@@ -1,64 +1,133 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Sistema de Gestión y Venta de Boletas para Conciertos
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Descripción
 
-## About Laravel
+Aplicación web desarrollada en Laravel para la administración y venta de boletas de conciertos. El sistema permite gestionar usuarios, controlar la disponibilidad de asientos, realizar ventas individuales y masivas, generar tickets y administrar recaudos.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Características
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+* Gestión de usuarios y roles.
+* Venta individual de boletas.
+* Venta masiva de boletas.
+* Consulta de reservas.
+* Generación y descarga de tickets.
+* Envío de tickets por correo electrónico.
+* Administración de asientos disponibles y vendidos.
+* Control y registro de recaudos.
+* Panel administrativo protegido mediante autenticación..
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tecnologías Utilizadas
 
-## Learning Laravel
+* PHP 7.3+
+* Laravel 8
+* MySQL
+* Bootstrap
+* JavaScript
+* DOMPDF (Generación de PDF)
+* Milon Barcode (Generación de códigos de barras)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Estructura Principal del Proyecto
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```text
+app/
+bootstrap/
+config/
+database/
+public/
+resources/
+routes/
+storage/
+tests/
+```
 
-## Laravel Sponsors
+## Instalación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### 1. Clonar el repositorio
 
-### Premium Partners
+```bash
+git clone <url-del-repositorio>
+cd concierto-master
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+### 2. Instalar dependencias
 
-## Contributing
+```bash
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3. Configurar variables de entorno
 
-## Code of Conduct
+Copiar el archivo de ejemplo:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+cp .env.example .env
+```
 
-## Security Vulnerabilities
+Configurar los datos de conexión a la base de datos en el archivo `.env`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. Generar clave de la aplicación
 
-## License
+```bash
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Ejecutar migraciones
+
+```bash
+php artisan migrate
+```
+
+### 6. Ejecutar seeders (opcional)
+
+```bash
+php artisan db:seed
+```
+
+### 7. Iniciar el servidor
+
+```bash
+php artisan serve
+```
+
+La aplicación estará disponible en:
+
+```text
+http://localhost:8000
+```
+
+## Módulos Principales
+
+### Clientes
+
+* Reserva de asientos.
+* Consulta de reservas.
+* Descarga de tickets.
+* Recepción de tickets por correo.
+
+### Administración
+
+* Gestión de usuarios.
+* Gestión de ventas.
+* Control de asientos.
+* Recaudo de pagos.
+* Reportes y seguimiento.
+
+## Rutas Relevantes
+
+| Ruta                  | Descripción                  |
+| --------------------- | ---------------------------- |
+| /                     | Página principal de reservas |
+| /consult-reservation  | Consulta de reservas         |
+| /form-login           | Inicio de sesión             |
+| /system/dashboard     | Panel administrativo         |
+| /system/sales         | Gestión de ventas            |
+| /system/users         | Gestión de usuarios          |
+| /system/collect-money | Gestión de recaudos          |
+
+## Autor
+
+Juan Esteban Villota
+
+## Licencia
+
+Proyecto desarrollado con fines académicos y de aprendizaje.
