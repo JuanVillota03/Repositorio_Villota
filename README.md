@@ -126,12 +126,7 @@ http://localhost:8000
 
 ## Autor
 
-Juan Esteban Villota
+
 
 ## Licencia
 
-<<<<<<< HEAD
-Proyecto desarrollado con fines académicos y de aprendizaje.
-=======
-Proyecto desarrollado con fines académicos y de aprendizaje.
->>>>>>> 41bf9c23844b5a010ee098384da62e9a580b709c
